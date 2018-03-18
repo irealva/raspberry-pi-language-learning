@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "raspberry-pi-language-learning",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,5 +11,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
-  }
+  },
+  "homepage": "https://irealva.github.io/raspberry-pi-language-learning",
 }
