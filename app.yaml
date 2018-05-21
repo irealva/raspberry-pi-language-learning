@@ -1,0 +1,15 @@
+runtime: nodejs
+env: flex
+env_variables:
+skip_files:
+- ^\.git$
+- ^.*node_modules(/.*)?
+- ^.*src/.*
+- ^(.*/)?\.DS_Store
+- ^(.*/)?app\.yaml
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.pyo
+- ^(.*/)?.*\.pyc
+- ^(.*/)?\..*$
+- ^.*ssl/.*

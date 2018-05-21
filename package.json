@@ -1,0 +1,82 @@
+{
+  "name": "French Passive Learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/index.js",
+  "engines": {
+    "node": ">=9.4.0"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            [
+              "env",
+              {
+                "targets": {
+                  "browsers": [
+                    "last 2 versions",
+                    "safari >= 7"
+                  ]
+                }
+              }
+            ],
+            "@babel/preset-env",
+            "@babel/preset-react"
+          ]
+        }
+      ]
+    ]
+  },
+  "scripts": {
+    "deploy": "yarn build && gcloud app deploy -v io-installation --project PROJECT --no-promote",
+    "dev_appserver": "dev_appserver.py app.yaml --port=$npm_package_gcloud_devPort --admin_port=$npm_package_gcloud_devAdminPort",
+    "browse": "gcloud app browse --project $npm_package_gcloud_id",
+    "build": "yarn less && browserify -t [ babelify --presets [ @babel/preset-react @babel/preset-env ] ] js/index.js -o assets/bundle.js",
+    "less": "lessc less/style.less assets/style.css",
+    "watch-client": "npm run less && concurrently \"npm run watchify\" \"autoless less/ assets/\"",
+    "watchify": "watchify -t [ babelify --presets [ @babel/preset-react @babel/preset-env ] ] js/index.js --debug -o assets/bundle.js --verbose",
+    "watch-server": "NODE_ENV=development nodemon server/index.js -w server",
+    "start": "node ./server/index.js",
+    "watch": "concurrently \"npm run watch-server\" \"npm run watch-client\""
+  },
+  "author": "Irene Alvarado",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "abortcontroller-polyfill": "^1.1.8",
+    "ajv": "^6.2.1",
+    "events": "^2.0.0",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
+    "iconv": "^2.3.0",
+    "jquery": "^3.3.1",
+    "jssoup": "^0.0.7",
+    "oauth": "^0.9.15",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "request-promise": "^4.2.2",
+    "single-byte": "^1.0.7",
+    "textillate": "^0.4.1",
+    "word-definition": "^2.1.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.47",
+    "@babel/preset-env": "^7.0.0-beta.47",
+    "@babel/preset-react": "^7.0.0-beta.47",
+    "autoless": "^0.1.7",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^9.0.0",
+    "browserify": "^14.5.0",
+    "concurrently": "^3.5.1",
+    "less": "^2.7.3",
+    "nodemon": "^1.15.1",
+    "npm": "^5.6.0",
+    "pug": "^2.0.0-rc.4",
+    "watchify": "^3.9.0"
+  }
+}

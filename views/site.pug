@@ -1,0 +1,17 @@
+html
+    head
+        title= title
+        meta(name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no')
+        meta(name='og:url' content= url)
+        meta(name='og:title' content= title)
+        meta(name='og:description' content= description)
+        meta(name='description' content= description)
+        meta(name='og:image' content= image)
+        link(href='https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700' rel='stylesheet')
+        link(href='/third_party/animate.css' rel='stylesheet')
+        link(href='/style.css' rel='stylesheet')
+    body
+        div(id='root')
+        
+//- script(src='/third_party/gif.js/dist/gif.js' charset='utf-8')
+script(src='/bundle.js' charset='utf-8')
