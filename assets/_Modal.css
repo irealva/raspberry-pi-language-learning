@@ -1,0 +1,8 @@
+.Modal {
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+}
