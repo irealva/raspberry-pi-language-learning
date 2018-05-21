@@ -1,7 +1,7 @@
 {
-  "name": "French Passive Learning",
+  "name": "raspberry-pi-language-learning",
   "version": "1.0.0",
-  "description": "",
+  "description": "French passive display learning",
   "main": "js/index.js",
   "engines": {
     "node": ">=9.4.0"
@@ -31,7 +31,7 @@
     ]
   },
   "scripts": {
-    "deploy": "yarn build && gcloud app deploy -v io-installation --project PROJECT --no-promote",
+    "deploy": "yarn build && gcloud app deploy --project french-display --version french-display",
     "dev_appserver": "dev_appserver.py app.yaml --port=$npm_package_gcloud_devPort --admin_port=$npm_package_gcloud_devAdminPort",
     "browse": "gcloud app browse --project $npm_package_gcloud_id",
     "build": "yarn less && browserify -t [ babelify --presets [ @babel/preset-react @babel/preset-env ] ] js/index.js -o assets/bundle.js",
@@ -56,8 +56,10 @@
     "jquery": "^3.3.1",
     "jssoup": "^0.0.7",
     "oauth": "^0.9.15",
+    "pug": "^2.0.0-rc.4",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "request": "^2.87.0",
     "request-promise": "^4.2.2",
     "single-byte": "^1.0.7",
     "textillate": "^0.4.1",
@@ -76,7 +78,6 @@
     "less": "^2.7.3",
     "nodemon": "^1.15.1",
     "npm": "^5.6.0",
-    "pug": "^2.0.0-rc.4",
     "watchify": "^3.9.0"
   }
 }
