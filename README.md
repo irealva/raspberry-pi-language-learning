@@ -36,6 +36,7 @@ yarn run deploy
 Only works with GL driver Fake KMS as per this discussion: https://github.com/guysoft/FullPageOS/issues/137. Set using `sudo raspi-config`
 
 By ssh ing into pi. On `sudo nano /boot/config.txt` file set according to this: https://www.raspberrypi.org/documentation/configuration/config-txt/video.md
+`lcd_rotate=2`
 
 ## Full screen browser
 
