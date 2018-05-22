@@ -44,6 +44,10 @@ https://blog.gordonturner.com/2017/12/10/raspberry-pi-full-screen-browser-raspbi
 
 `shift control q`
 
+#### Reboot the pi
+
+`sudo reboot`
+
 # Sources
 
 https://newsapi.org/sources
